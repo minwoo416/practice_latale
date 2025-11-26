@@ -1,0 +1,43 @@
+/* ---------------------------------header----------------------------------------- */
+header {
+    width:100%; height:70px;
+    background:#120E38;
+    display:flex; gap:100px; align-items:center;
+    padding-left:30px;
+}
+header #logo {}
+header #logo a {}
+header #logo a img {display:block;}
+header #gnb {/* width:100%; */ background:red; height:100%;}
+header #gnb .show_gnb {
+    display:flex; /* justify-content:center; */ background:lime; 
+    height:100%;
+    position:relative;
+}
+header #gnb .show_gnb > li {
+    background:blue; 
+    display:flex; align-items:center; 
+    height:100%;
+}
+header #gnb .show_gnb > li > a {
+    font-size:1.375rem;
+    font-weight:600;
+    color:#fff;
+    padding:0 50px;
+}
+header #gnb .show_gnb > li .depth {
+    /* display:none; */
+    position:absolute; top:100px;
+}
+header .game_start_btn {height:100%;}
+header .game_start_btn button {
+    width:249px;
+    padding:0 50px;
+    display:block; height:100%;
+    background:#FA5AA8;
+    color:#fff;
+    /* font-size:1.5rem;
+    font-weight:600; */
+}
+/* ---------------------------------main----------------------------------------- */
+/* ---------------------------------footer----------------------------------------- */
