@@ -1,23 +1,25 @@
 /* ---------------------------------header----------------------------------------- */
 header {
     width:100%; height:70px;
-    background:#120E38;
-    display:flex; gap:100px; align-items:center;
-    padding-left:30px;
-}
-header #logo {}
-header #logo a {}
-header #logo a img {display:block;}
-header #gnb {/* width:100%; */ background:red; height:100%;}
-header #gnb .show_gnb {
-    display:flex; /* justify-content:center; */ background:lime; 
-    height:100%;
+    background:rgba(18, 14, 56, 0.99);
+    display:flex; gap:100px; align-items:center; justify-content:space-between;
     position:relative;
 }
+header #logo {margin-left:30px;}
+header #logo a {}
+header #logo a img {display:block;}
+header #gnb {
+    width:max-content;
+    height:100%;
+}
+header #gnb .show_gnb {
+    display:flex;
+    height:100%;
+}
 header #gnb .show_gnb > li {
-    background:blue; 
     display:flex; align-items:center; 
     height:100%;
+    position:relative;
 }
 header #gnb .show_gnb > li > a {
     font-size:1.375rem;
@@ -26,8 +28,17 @@ header #gnb .show_gnb > li > a {
     padding:0 50px;
 }
 header #gnb .show_gnb > li .depth {
-    /* display:none; */
-    position:absolute; top:100px;
+    width:100%;
+    position:absolute; top:100px; left:0;
+    text-align:center;
+    display:flex; flex-flow:column nowrap; gap:20px;
+    z-index:999;
+    display:none;
+}
+header #gnb .show_gnb > li .depth > li {width:100%;}
+header #gnb .show_gnb > li .depth > li a {
+    font-size:1.125rem;
+    color:#fff;
 }
 header .game_start_btn {height:100%;}
 header .game_start_btn button {
@@ -36,8 +47,67 @@ header .game_start_btn button {
     display:block; height:100%;
     background:#FA5AA8;
     color:#fff;
-    /* font-size:1.5rem;
-    font-weight:600; */
+    /* 게임스타트 초기 숨기기 */
+    opacity:0;
+    pointer-events:none;
+}
+header .depth_bg {
+    width:100%; height:230px;
+    position:absolute; top:70px; left:0; z-index:0;
+    background:#120E38;
+    display:none;
 }
 /* ---------------------------------main----------------------------------------- */
+main {}
+/* --------------------1행 배너------------------------ */
+main .banner_container {position:relative;}
+main .banner_container .swiper {}
+main .banner_container .swiper .swiper-wrapper {}
+main .banner_container .swiper .swiper-wrapper .swiper-slide {}
+main .banner_container .swiper .swiper-wrapper .swiper-slide a {width:100%; height:700px;}
+main .banner_container .swiper .swiper-wrapper .swiper-slide a img {display:block; width:100%; height:100%;}
+main .banner_container .swiper .swiper_btn_wrap {
+    display:flex; flex-flow:row nowrap; justify-content:center; align-items:center;
+    width:100%; height:50px;
+    gap:0px;
+    position:absolute; bottom:30px;
+}
+main .banner_container .swiper .swiper_btn_wrap .swiper_arrow_wrap {
+    height:100%; z-index:999;
+    display:flex; flex-flow:row nowrap;
+    position:relative;
+    width:80px;
+}
+main .banner_container .swiper .swiper_btn_wrap .swiper_arrow_wrap .swiper-button-prev {
+    height:max-content;
+    left:0; top:33px;
+}
+main .banner_container .swiper .swiper_btn_wrap .swiper_arrow_wrap .swiper-button-next {
+    height:max-content;
+    right:0; top:33px;
+}
+main .banner_container .swiper .swiper_btn_wrap .swiper_arrow_wrap .swiper-button-prev img {
+    display:block; object-fit:contain;
+    width:30px; height:30px;
+}
+main .banner_container .swiper .swiper_btn_wrap .swiper_arrow_wrap .swiper-button-next img {
+    display:block;
+    width:30px; height:30px;
+}
+main .banner_container .swiper .swiper_btn_wrap .swiper_arrow_wrap .swiper-button-prev svg {display:none;}
+main .banner_container .swiper .swiper_btn_wrap .swiper_arrow_wrap .swiper-button-next svg {display:none;}
+main .banner_container .swiper .swiper_btn_wrap .swiper-pagination {
+    position:static !important;
+    width:max-content;
+}
+main .banner_container .swiper .swiper_btn_wrap .swiper-pagination span {
+    width:20px;
+    height:20px;
+}
+main .banner_container .swiper .swiper_btn_wrap .swiper-pagination span.swiper-pagination-bullet {
+    background:#000;
+}
+main .banner_container .swiper .swiper_btn_wrap .swiper-pagination span.swiper-pagination-bullet-active {
+    background:#FA5AA8;
+}
 /* ---------------------------------footer----------------------------------------- */

@@ -6,6 +6,13 @@
     <title>흥미롭고 놀라운 이야기, '라테일(latale)'</title>
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/index.css">
+    <script src="./scripts/index.js" defer></script>
+    <!--플러그인 필수 css cdn 연결-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!--플러그인 필수 JS cdn 연결-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
     <header>
@@ -53,9 +60,34 @@
                 </li>
             </ul>
         </div>
+        <div class="depth_bg"></div>
         <div class="game_start_btn"><button type="button">GAME START</button></div>
     </header>
-    <main></main>
+    <main>
+        <div class="banner_container">
+            <div class="swiper banner">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><a href="#"><img src="./images/banner01.jpg" alt=""></a></div>
+                    <div class="swiper-slide"><a href="#"><img src="./images/banner02.jpg" alt=""></a></div>
+                    <div class="swiper-slide"><a href="#"><img src="./images/banner03.jpg" alt=""></a></div>
+                    <div class="swiper-slide"><a href="#"><img src="./images/banner04.jpg" alt=""></a></div>
+                    <div class="swiper-slide"><a href="#"><img src="./images/banner05.jpg" alt=""></a></div>
+                    <div class="swiper-slide"><a href="#"><img src="./images/banner01.jpg" alt=""></a></div>
+                    <div class="swiper-slide"><a href="#"><img src="./images/banner02.jpg" alt=""></a></div>
+                    <div class="swiper-slide"><a href="#"><img src="./images/banner03.jpg" alt=""></a></div>
+                    <div class="swiper-slide"><a href="#"><img src="./images/banner04.jpg" alt=""></a></div>
+                    <div class="swiper-slide"><a href="#"><img src="./images/banner05.jpg" alt=""></a></div>
+                </div>
+                <div class="swiper_btn_wrap">
+                    <div class="swiper_arrow_wrap">
+                        <div class="swiper-button-prev"><img src="./images/Group 6.png" alt=""></div>
+                        <div class="swiper-button-next"><img src="./images/button_next_black.png" alt=""></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </main>
     <footer></footer>
 </body>
 </html>
