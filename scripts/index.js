@@ -28,7 +28,21 @@ const styleSmall = document.querySelectorAll('main .game_info_container .new_sty
 const styleBig = document.querySelector('main .game_info_container .new_style_wrap .new_style_big p img');
 const styleGo = document.querySelector('main .game_info_container .new_style_wrap .new_style_big a')
 const gameStart = document.querySelector('main .game_info_container .game_start_wrap .game_start_btn button')
-console.log(gameStartBtn, styleSmall, styleBig, styleGo, gameStart)
+const lataleVideoThum = document.querySelectorAll('main .latale_video_container .latale_video_wrap .swiper-slide button');
+const lataleVideoPopup = document.querySelector('main .latale_video_popup_wrap');
+const lataleVideCloseBtn = document.querySelector('main .latale_video_popup_wrap button');
+console.log(gameStartBtn, styleSmall, styleBig, styleGo, gameStart, lataleVideoThum, lataleVideoPopup ,lataleVideCloseBtn)
+/* 라테일 영상 팝업 */
+lataleVideCloseBtn.addEventListener('click',()=>{
+    lataleVideoPopup.style.display = 'none';
+    document.body.style.overflow = '';
+})
+lataleVideoThum.forEach((e,i)=>{
+    e.addEventListener('click',()=>{
+        lataleVideoPopup.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    })
+})
 /* 스크롤내릴시 게임시작 버튼 등장 */
 window.addEventListener('scroll',()=>{
     if(window.scrollY > 133){

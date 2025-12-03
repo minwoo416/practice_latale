@@ -5,6 +5,7 @@ header {
     display:flex; gap:100px; align-items:center; justify-content:space-between;
     position:sticky; top:0; left:0;
     z-index:998;
+    overflow:hidden;
 }
 header.active {
     background:rgba(18, 14, 56, 1);
@@ -323,14 +324,24 @@ main .latale_video_container .latale_video .latale_video_list .swiper_btn_wrap .
 main .latale_video_container .latale_video .latale_video_list .swiper_btn_wrap .swiper-button-next img {display:block; width:100%;}
 main .latale_video_container .latale_video .latale_video_list .swiper_btn_wrap .swiper-button-prev svg {display:none;}
 main .latale_video_container .latale_video .latale_video_list .swiper_btn_wrap .swiper-button-next svg {display:none;}
-main .latale_video_container .latale_video_popup_wrap {
-    width:100vh ; height:100vh; background:red;
-    position:absolute; top:0; left:0;
-    padding:100px;
+main .latale_video_popup_wrap {
+    width:100% ; height:100vh; background:rgba(0,0,0,0.4);
+    position:fixed; top:0; left:0;
+    padding:100px; z-index:900;
+    /* 초기숨기기 */
+    display:none;
 }
-main .latale_video_container .latale_video_popup_wrap .latale_video_popup {
-    background:blue;
+main .latale_video_popup_wrap .latale_video_popup {
+    width:100%; height:100%;
+    display:flex; flex-flow:row nowrap; justify-content:center; align-items:center;
+    position:relative;
 }
+main .latale_video_popup_wrap .latale_video_popup iframe {}
+main .latale_video_popup_wrap .latale_video_popup button {
+    position:absolute;
+    top:0; right:300px;
+}
+main .latale_video_popup_wrap .latale_video_popup button img {display:block;}
 /* --------------------4행 창작 컨텐츠------------------------ */
 main .user_content_container {
     background:url(../images/content_bg.jpg) center 10% no-repeat;
@@ -436,4 +447,46 @@ main .user_content_container .user_content .user_content_wrap .user_webtoon_wrap
     font-weight:500;
 }
 main .user_content_container .user_content .user_content_wrap .user_webtoon_wrap .swiper .swiper-wrapper .swiper-slide a img {display:block; width:100%;}
+/* ---------------------------------직업소개----------------------------------------- */
+main .latale_job_container {background:red; padding:100px 0;}
+main .latale_job_container .latale_job_wrap {}
+main .latale_job_container .latale_job_wrap .latale_job_class {
+    background:blue;
+    display:flex; justify-content:center; gap:50px;
+    margin-bottom:30px;
+}
+main .latale_job_container .latale_job_wrap .latale_job_class button {}
+main .latale_job_container .latale_job_wrap .latale_job_class button img {display:block;}
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap {}
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap {
+    
+}
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap > ul {
+    display:flex; align-items:center; justify-content:center; gap:30px;
+    height:128px;
+    background:blue;
+    background:url(../images/latale_job_cate.bg.png) top center no-repeat; 
+    
+}
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap > ul > li {}
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap > ul > li > button {
+    padding:10px 15px;
+}
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap > ul > li .depth {
+    display:none;
+}
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap > ul > li .depth li {}
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap > ul > li .depth li button {}
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap > ul > li .depth li button img {}
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap > ul > li .depth li p {}
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_content {}
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_content .latale_job_name_wrap {}
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_content .latale_job_name_wrap .latale_job_name {}
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_content .latale_job_name_wrap .latale_job_name p {}
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_content .latale_job_name_wrap .latale_job_name p span {}
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_content .latale_job_name_wrap .latale_job_story {}
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_content .latale_job_name_wrap .latale_job_story p {}
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_content .latale_job_skill {}
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_content .latale_job_skill button {}
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_content .latale_job_skill button img {}
 /* ---------------------------------footer----------------------------------------- */
