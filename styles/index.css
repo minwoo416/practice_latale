@@ -451,7 +451,7 @@ main .user_content_container .user_content .user_content_wrap .user_webtoon_wrap
 main .latale_job_container {
     background:url(../images/latale_job_bg.jpg) center center no-repeat;
     background-size:cover;
-    padding:100px 170px; position:relative; overflow:hidden;
+    padding:100px 0; position:relative; overflow:hidden;
 }
 main .latale_job_container .latale_job_wrap {}
 main .latale_job_container .latale_job_wrap .latale_job_class {
@@ -461,7 +461,7 @@ main .latale_job_container .latale_job_wrap .latale_job_class {
 main .latale_job_container .latale_job_wrap .latale_job_class button {}
 main .latale_job_container .latale_job_wrap .latale_job_class button img {display:block;}
 main .latale_job_container .latale_job_wrap .latale_job_content_wrap {z-index:700;}
-main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap {}
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap {width:100%;}
 main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap > ul {
     display:flex; align-items:center; justify-content:center; gap:30px;
     height:128px;
@@ -469,31 +469,36 @@ main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job
     background:url(../images/latale_job_cate.bg.png) top center no-repeat;
     
 }
-main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap > ul > li {position:relative;
-}
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap > ul > li {}
 main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap > ul > li > button {
     padding:10px 15px;
     color:#fff;
 }
-main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap > ul > li .depth {
-    display:none;
-    background:blue;
-    position:absolute; top:100px;
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap .latale_job_small_thum {
+    /* 작은 섬네일 위치 */
+    width:100%; height:121px;
+    padding:0 170px;
+    display:flex; flex-flow:row nowrap;
 }
-main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap > ul > li .depth li {
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap .latale_job_small_thum .depth {
+    display:none;
+}
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap .latale_job_small_thum .depth li {
     width:150px;
     display:flex; flex-flow:column nowrap; gap: 20px; justify-content:center; align-items:center;
 }
-main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap > ul > li .depth li button {display:block;}
-main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap > ul > li .depth li button img {display:block;}
-main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap > ul > li .depth li p {
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap .latale_job_small_thum .depth li button {}
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap .latale_job_small_thum .depth li button img {display:block;}
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap .latale_job_small_thum .depth li p {
     font-size:1.125rem;
     font-weight:500;
     color:#fff;
 }
 main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_content {
-    margin-top:200px;
+    margin-top:100px;
     max-width:800px;
+    width:100%;
+    padding:0 170px;
 }
 main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_content .latale_job_name_wrap {}
 main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_content .latale_job_name_wrap .latale_job_name {

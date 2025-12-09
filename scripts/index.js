@@ -31,7 +31,53 @@ const gameStart = document.querySelector('main .game_info_container .game_start_
 const lataleVideoThum = document.querySelectorAll('main .latale_video_container .latale_video_wrap .swiper-slide button');
 const lataleVideoPopup = document.querySelector('main .latale_video_popup_wrap');
 const lataleVideCloseBtn = document.querySelector('main .latale_video_popup_wrap button');
-console.log(gameStartBtn, styleSmall, styleBig, styleGo, gameStart, lataleVideoThum, lataleVideoPopup ,lataleVideCloseBtn)
+const lataleClass = document.querySelector('main .latale_job_container .latale_job_class');
+const lataleClassBtn = document.querySelectorAll('main .latale_job_container .latale_job_class button');
+const lataleJobBtn = document.querySelectorAll('main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap > ul > li > button');
+const lataleSmallThum = document.querySelector('main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap .latale_job_small_thum');
+const lataleJobDepth = document.querySelectorAll('main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap .latale_job_small_thum .depth');
+console.log(/* gameStartBtn, styleSmall, styleBig, styleGo, gameStart, lataleVideoThum, lataleVideoPopup ,lataleVideCloseBtn,  */lataleJobBtn, lataleSmallThum, lataleJobDepth)
+/* 라테일 직업 소개 */
+function lataleclassToggle(){
+    const lataleMain = lataleClass.children[0];
+    const lataleSub = lataleClass.children[1];
+    console.log(lataleMain)
+    lataleMain.addEventListener('click',()=>{
+        console.log(lataleMain.children[0].src)
+        if(lataleSub.children[0].src == './images/job_sub_off.png'){
+            console.log('참')
+            /* lataleSub.children[0].src = './images/job_sub_off.png'
+            lataleMain.children[0].src = './images/job_main_on.png' */
+        }else{
+            console.log('거짓')
+            /* lataleSub.children[0].src = './images/job_sub_on.png'
+            lataleMain.children[0].src = './images/job_main_off.png' */
+        }
+    })
+   /*  lataleSub.addEventListener('click',()=>{
+        if(lataleMain.children[0].src == './images/job_main_on.png'){
+            lataleMain.children[0].src = './images/job_main_off.png'
+            lataleSub.children[0].src = './images/job_sub_on.png'
+        }else{
+            lataleSub.children[0].src = './images/job_sub_off.png'
+            lataleMain.children[0].src = './images/job_main_on.png'
+        }
+    }) */
+}
+lataleclassToggle()
+lataleJobBtn.forEach((btn,i)=>{
+    lataleSmallThum.children[0].style.display = 'flex';
+    btn.addEventListener('click',()=>{
+        console.log(i)
+        lataleJobDepth.forEach((depth, index)=>{
+            if(i == index){
+                depth.style.display = 'flex';
+            }else{
+                depth.style.display = 'none';
+            }
+        })
+    })
+})
 /* 라테일 영상 팝업 */
 lataleVideCloseBtn.addEventListener('click',()=>{
     lataleVideoPopup.style.display = 'none';
