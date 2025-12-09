@@ -461,11 +461,11 @@ main .latale_job_container .latale_job_wrap .latale_job_class {
 main .latale_job_container .latale_job_wrap .latale_job_class button {}
 main .latale_job_container .latale_job_wrap .latale_job_class button img {display:block;}
 main .latale_job_container .latale_job_wrap .latale_job_content_wrap {z-index:700;}
-main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap {width:100%;}
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap {width:100%; position:relative; z-index:50;}
 main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap > ul {
     display:flex; align-items:center; justify-content:center; gap:30px;
     height:128px;
-    position:relative; z-index:50;
+    /* position:relative; z-index:50; */
     background:url(../images/latale_job_cate.bg.png) top center no-repeat;
     
 }
@@ -473,6 +473,10 @@ main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job
 main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap > ul > li > button {
     padding:10px 15px;
     color:#fff;
+}
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap > ul > li > button.active {
+    background:#FA5AA8;
+    border-radius:20px;
 }
 main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap .latale_job_small_thum {
     /* 작은 섬네일 위치 */
@@ -487,8 +491,8 @@ main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job
     width:150px;
     display:flex; flex-flow:column nowrap; gap: 20px; justify-content:center; align-items:center;
 }
-main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap .latale_job_small_thum .depth li button {}
-main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap .latale_job_small_thum .depth li button img {display:block;}
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap .latale_job_small_thum .depth li button {display:block;}
+main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap .latale_job_small_thum .depth li button img {display:block; width:100%;}
 main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap .latale_job_small_thum .depth li p {
     font-size:1.125rem;
     font-weight:500;
@@ -499,6 +503,7 @@ main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job
     max-width:800px;
     width:100%;
     padding:0 170px;
+    position:relative; z-index:50;
 }
 main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_content .latale_job_name_wrap {}
 main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_content .latale_job_name_wrap .latale_job_name {

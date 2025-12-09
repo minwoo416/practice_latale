@@ -36,39 +36,38 @@ const lataleClassBtn = document.querySelectorAll('main .latale_job_container .la
 const lataleJobBtn = document.querySelectorAll('main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap > ul > li > button');
 const lataleSmallThum = document.querySelector('main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap .latale_job_small_thum');
 const lataleJobDepth = document.querySelectorAll('main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap .latale_job_small_thum .depth');
-console.log(/* gameStartBtn, styleSmall, styleBig, styleGo, gameStart, lataleVideoThum, lataleVideoPopup ,lataleVideCloseBtn,  */lataleJobBtn, lataleSmallThum, lataleJobDepth)
+const lataleJobDepthBtn = document.querySelectorAll('main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap .latale_job_small_thum .depth li button');
+const lataleJobThum = document.querySelector('main .latale_job_container .latale_job_wrap .latale_job_thum');
+console.log(lataleJobDepthBtn)
+/* 라테일 직업 큰 일러스트 */
+lataleJobDepthBtn.forEach((e, index)=>{
+    e.addEventListener('click',()=>{
+        lataleJobThum.children[0].src = `./images/latale_job_thum${index + 1}.png`
+        console.log(index)
+    })
+})
 /* 라테일 직업 소개 */
 function lataleclassToggle(){
     const lataleMain = lataleClass.children[0];
     const lataleSub = lataleClass.children[1];
-    console.log(lataleMain)
     lataleMain.addEventListener('click',()=>{
-        console.log(lataleMain.children[0].src)
-        if(lataleSub.children[0].src == './images/job_sub_off.png'){
-            console.log('참')
-            /* lataleSub.children[0].src = './images/job_sub_off.png'
-            lataleMain.children[0].src = './images/job_main_on.png' */
-        }else{
-            console.log('거짓')
-            /* lataleSub.children[0].src = './images/job_sub_on.png'
-            lataleMain.children[0].src = './images/job_main_off.png' */
-        }
+        lataleMain.children[0].src = './images/job_main_on.png'
+        lataleSub.children[0].src = './images/job_sub_off.png'
     })
-   /*  lataleSub.addEventListener('click',()=>{
-        if(lataleMain.children[0].src == './images/job_main_on.png'){
-            lataleMain.children[0].src = './images/job_main_off.png'
-            lataleSub.children[0].src = './images/job_sub_on.png'
-        }else{
-            lataleSub.children[0].src = './images/job_sub_off.png'
-            lataleMain.children[0].src = './images/job_main_on.png'
-        }
-    }) */
+    lataleSub.addEventListener('click',()=>{
+        lataleSub.children[0].src = './images/job_sub_on.png'
+        lataleMain.children[0].src = './images/job_main_off.png'
+    })
 }
 lataleclassToggle()
 lataleJobBtn.forEach((btn,i)=>{
+    /* btn[0].classList.add('active'); */ /* 기본값 */
     lataleSmallThum.children[0].style.display = 'flex';
     btn.addEventListener('click',()=>{
-        console.log(i)
+        /* 카테고리 클릭 시 변경되고 기존 선택된 카테고리 지우기 */
+        lataleJobBtn.forEach((b)=>{b.classList.remove('active');}) /* 한번 지우고 */
+        btn.classList.add('active') /* 다시 추가 */
+        /* 뎁스 나오기 */
         lataleJobDepth.forEach((depth, index)=>{
             if(i == index){
                 depth.style.display = 'flex';
