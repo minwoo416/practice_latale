@@ -23,6 +23,9 @@ var userWebtoon = new Swiper("main .user_content_container .swiper", {
     },
 })
 const header = document.querySelector('header');
+const headerGnb = document.querySelector('header #gnb .show_gnb');
+const gnbDepth = document.querySelectorAll('header #gnb .depth');
+const depthBg = document.querySelector('header .depth_bg');
 const gameStartBtn = document.querySelector('header .game_start_btn button');
 const styleSmall = document.querySelectorAll('main .game_info_container .new_style_wrap .new_style_small button');
 const styleBig = document.querySelector('main .game_info_container .new_style_wrap .new_style_big p img');
@@ -39,6 +42,19 @@ const lataleJobDepth = document.querySelectorAll('main .latale_job_container .la
 const lataleJobDepthBtn = document.querySelectorAll('main .latale_job_container .latale_job_wrap .latale_job_content_wrap .latale_job_cate_wrap .latale_job_small_thum .depth li button');
 const lataleJobThum = document.querySelector('main .latale_job_container .latale_job_wrap .latale_job_thum');
 console.log(lataleJobDepthBtn)
+/* 헤더 depth */
+headerGnb.addEventListener('mouseover',()=>{
+    depthBg.style.display = 'block';
+    gnbDepth.forEach((e, i)=>{
+        e.style.display = 'flex';
+    })
+})
+depthBg.addEventListener('mouseout',()=>{
+    depthBg.style.display = 'none';
+    gnbDepth.forEach((e, i)=>{
+        e.style.display = 'none';
+    })
+})
 /* 라테일 직업 큰 일러스트 */
 lataleJobDepthBtn.forEach((e, index)=>{
     e.addEventListener('click',()=>{
@@ -121,7 +137,6 @@ styleSmall[3].addEventListener('mouseover',()=>{
     styleGo.href = 'https://www.latale.com/news/newstyle#link=A7998AE51F0DEFEFAA0032A6B8C36769467ABA27D3A8BC04E27C1A0A5367E2214A76335F53303136EC9D2D52D5A17735'
 })
 gameStart.addEventListener('mouseover',()=>{
-    console.log(gameStart.children[0].src)
     gameStart.children[0].src = './images/game_start_on_icon.png'
 })
 gameStart.addEventListener('mouseleave',()=>{
